@@ -18,27 +18,29 @@ const ColorFilters: FC = observer(() => {
   };
 
   return (
-    <div className="flex py-2 justify-between">
-      <input
-        type="text"
-        autoComplete="off"
-        className="input"
-        name="name"
-        placeholder="Color Name..."
-        value={form.name}
-        onChange={inputChangeHandler}
-      />
-      <input
-        type="text"
-        autoComplete="off"
-        className="input"
-        name="hash"
-        placeholder="Color Hash..."
-        value={form.hash}
-        onChange={inputChangeHandler}
-      />
+    <div className="flex flex-col md:flex-row py-2 justify-between">
+      <span className="flex flex-col md:flex-row">
+        <input
+          type="text"
+          autoComplete="off"
+          className="input md:mr-6 mb-2 md:mb-0"
+          name="name"
+          placeholder="Color Name..."
+          value={form.name}
+          onChange={inputChangeHandler}
+        />
+        <input
+          type="text"
+          autoComplete="off"
+          className="input"
+          name="hash"
+          placeholder="Color Hash..."
+          value={form.hash}
+          onChange={inputChangeHandler}
+        />
+      </span>
       <button
-        className="button bg-blue-500 w-1/4 text-white font-bold items-center"
+        className="button bg-blue-500 text-white font-bold items-center mt-2 md:mt-0 w-full md:w-1/4"
         onClick={applyFilters}
       >
         Search
@@ -48,4 +50,3 @@ const ColorFilters: FC = observer(() => {
 });
 
 export default ColorFilters;
-
