@@ -18,6 +18,7 @@ const InputAndLabel: FC<IInputAndLabel> = ({ label, name, errors, type }) => {
         className="input"
         type={type}
         name={name}
+        data-test={`data_${name}`}
       />
     </div>
   );

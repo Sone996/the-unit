@@ -16,11 +16,12 @@ const List: FC = observer(() => {
   return (
     <div className="relative h-full w-full">
       <Scroll>
-        <div className="antialiased bg-gray-200 text-gray-900 font-sans p-6">
+        <div id='bla' className="antialiased bg-gray-200 text-gray-900 font-sans p-6">
           <div className="container mx-auto">
             <div className="flex py-1 w-full justify-end">
               <button
                 className="button bg-blue-500 w-full md:w-1/5 text-white text-2xl font-bold items-center"
+                data-test='add-color'
                 onClick={addColor}
               >
                 +
