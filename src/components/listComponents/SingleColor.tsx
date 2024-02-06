@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { IColor } from "../../types/types";
 import { RootStore } from "../../clietStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SingleColor: FC<{ props: IColor; index: number }> = ({
   props,
@@ -15,26 +16,26 @@ const SingleColor: FC<{ props: IColor; index: number }> = ({
 
   return (
     <div
-      className="flex items-center w-full rounded-lg my-2 py-2 justify-between border border-black p-2 bg-white"
+      className="single-color-list-item text-gray-500 flex items-center w-full justify-between border-b border-gray-300 px-4 py-3 bg-white"
       data-test={`item_${id}`}
     >
-      <div className="inline-block px-3 py-1 text-sm font-semibold w-1/5">
-        {id}
+      <div className="inline-block py-1 text-sm font-semibold w-6 text-right">
+        {id}.
       </div>
-      <div className="inline-block px-3 py-1 text-md font-semibold w-1/5">
+      <div className="inline-block px-3 py-1 text-md font-semibold w-full">
         {name}
       </div>
-      <div className="text-md text-gray-500 p-1 w-1/5">{hash}</div>
-      <div className="h-3 w-1/5" style={{ backgroundColor: hash }}></div>
+      <div className="text-md p-1 w-1/5 text-right pr-4">{hash}</div>
+      <div className="h-6 min-w-6 rounded-full border border-gray-200" style={{ backgroundColor: hash }}></div>
       <div
-        className="flex cursor-pointer w-1/5 justify-end pr-4"
+        className="flex cursor-pointer justify-end pl-4"
         onClick={deleteHandler}
       >
         <span
-          className="text-red hover:bg-red hover:text-white p-1 rounded-md"
+          className="delete-button opacity-0 transition-opacity duration-700 text-gray-400 p-1 rounded-md"
           data-test={`delete_item_${id}`}
         >
-          Delete
+            <FontAwesomeIcon icon="trash" />
         </span>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { IColor } from "../types/types";
 import { observer } from "mobx-react-lite";
 import { RootStore } from "../clietStore";
 import SingleColor from "../components/listComponents/SingleColor";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const List: FC = observer(() => {
   const { appStore } = RootStore();
@@ -16,20 +17,20 @@ const List: FC = observer(() => {
   return (
     <div className="relative h-full w-full">
       <Scroll>
-        <div id='bla' className="antialiased bg-gray-200 text-gray-900 font-sans p-6">
+        <div className="antialiased bg-white text-gray-900 font-sans p-6">
           <div className="container mx-auto">
             <div className="flex py-1 w-full justify-end">
               <button
-                className="button bg-blue-500 w-full md:w-1/5 text-white text-2xl font-bold items-center"
+                className="button text-gray-600 font-bold items-center border border-gray-300 cursor-pointer"
                 data-test='add-color'
                 onClick={addColor}
               >
-                +
+                <FontAwesomeIcon icon="plus-circle" /> Add new color
               </button>
             </div>
 
             <ColorFilters />
-            <div className="flex flex-wrap -mx-4">
+            <div className="flex flex-wrap">
               {appStore.filteredColors.length === 0 ? (
                 <div>No matching colors</div>
               ) : (

@@ -4,9 +4,9 @@ import { IInputAndLabel } from "../../types/types";
 
 const InputAndLabel: FC<IInputAndLabel> = ({ label, name, errors, type }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-3">
       <div className="flex">
-        <label htmlFor="username">{label}</label>
+        <label className="text-sm" htmlFor="username">{label}</label>
         {errors != null ? (
           errors.errors && errors.touched ? (
             <span className="ml-2 text-red">{errors.errors}</span>

@@ -4,6 +4,7 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RootStateProvider } from "./clietStore";
+import './font-awesome.config';
 
 ReactDOM.render(
   <React.StrictMode>
