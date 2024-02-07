@@ -13,6 +13,7 @@ const color = [
       cy.dataTest("add-color").click();
       cy.dataTest("new-color-modal").should("be.visible");
       cy.dataTest("data_name").type("cypress");
+      cy.dataTest("data_hash").clear();
       cy.dataTest("data_hash").type("#FFFFFF");
       cy.dataTest("save-color").click();
       cy.wait(500);
