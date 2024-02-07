@@ -2,8 +2,8 @@ import { FC } from "react";
 import { observer } from "mobx-react-lite";
 import { RootStore } from "../clietStore";
 import NewColorModal from "../components/listComponents/NewColorModal";
-import List from "../pages/List";
 import DeleteColorModal from "../components/listComponents/DeleteColorModal";
+import ColorPage from "../pages/ColorPage";
 
 const AppLayout: FC = observer(() => {
   const { appStore } = RootStore();
@@ -36,7 +36,7 @@ const AppLayout: FC = observer(() => {
       )}
       {/* END :: MODALS */}
       {/* MAIN CONTENT */}
-      <List />
+      <ColorPage />
       {/* END :: MAIN CONTENT */}
     </div>
   );
