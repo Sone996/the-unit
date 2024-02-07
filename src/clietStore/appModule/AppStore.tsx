@@ -33,8 +33,7 @@ export class AppStore {
     { id: "20", name: "Gray", hash: "#808080" },
   ];
   colorFilters: IColorFilters = {
-    name: "",
-    hash: "",
+    searchQuery: "",
   };
   // END :: STATE
 
@@ -50,13 +49,13 @@ export class AppStore {
     return this.colors;
   }
   get filteredColors(): IColor[] {
-    const { name, hash } = this.colorFilters;
+    const { searchQuery } = this.colorFilters;
     return this.colors.filter((color) => {
-      const isNameMatch =
-        !name || color.name.toLowerCase().includes(name.toLowerCase());
-      const isHashMatch =
-        !hash || color.hash.toLowerCase().includes(hash.toLowerCase());
-      return isNameMatch && isHashMatch;
+      const lowercaseSearchQuery = searchQuery.toLowerCase();
+      return (
+        color.name.toLowerCase().includes(lowercaseSearchQuery) ||
+        color.hash.toLowerCase().includes(lowercaseSearchQuery)
+      );
     });
   }
   // END :: COMPUTED
@@ -88,9 +87,9 @@ export class AppStore {
       };
     });
   };
-  setColorFilters = (filters: { name: string; hash: string }) => {
+  setColorFilters = (searchQuery: string) => {
     runInAction(() => {
-      this.colorFilters = filters;
+      this.colorFilters.searchQuery = searchQuery;
     });
   };
   // END :: ACTIONS

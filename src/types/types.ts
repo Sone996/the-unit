@@ -34,6 +34,5 @@
   }
 
   export interface IColorFilters {
-    name: string,
-    hash: string
+    searchQuery: string,
   }
