@@ -1,5 +1,5 @@
 
 import fontawesome from '@fortawesome/fontawesome'
-import { faTrash, faPlusCircle } from '@fortawesome/fontawesome-free-solid'
+import { faTrash, faPlusCircle, faSearch } from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(faTrash, faPlusCircle);
+fontawesome.library.add(faTrash, faPlusCircle, faSearch);

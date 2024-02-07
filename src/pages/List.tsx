@@ -25,7 +25,7 @@ const List: FC = observer(() => {
                 data-test='add-color'
                 onClick={addColor}
               >
-                <FontAwesomeIcon icon="plus-circle" /> Add new color
+                <FontAwesomeIcon icon="plus-circle" className="mr-1" /> Add new color
               </button>
             </div>
 

@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { RootStore } from "../../clietStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ColorFilters: FC = observer(() => {
   const { appStore } = RootStore();
@@ -41,7 +42,7 @@ const ColorFilters: FC = observer(() => {
         className="button font-bold items-center mt-2 md:mt-0 border border-gray-300 cursor-pointer"
         onClick={applyFilters}
       >
-        Search
+        <FontAwesomeIcon icon="search" className="mr-1"/> Search
       </button>
     </div>
   );

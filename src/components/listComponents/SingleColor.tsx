@@ -11,7 +11,7 @@ const SingleColor: FC<{ props: IColor; index: number }> = ({
   const { appStore } = RootStore();
 
   const deleteHandler = () => {
-    appStore.deleteColor(id);
+    appStore.setModal("delete-color-modal", true, {id});
   };
 
   return (

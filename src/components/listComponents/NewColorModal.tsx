@@ -14,12 +14,12 @@ const defaultForm: INewColorModal = {
 
 const NewColorSchema = Yup.object().shape({
   name: Yup.string()
-    .min(4, "Potrebno je 4 - 30 karaktera")
-    .max(30, "Potrebno je 4 - 30 karaktera")
+    .min(3, "Minimum characters is 3")
+    .max(15, "Maxiimum characters is 15")
     .required("Required field"),
   hash: Yup.string()
-    .min(4, "Potrebno je 4 - 15 karaktera")
-    .max(15, "Potrebno je 4 - 15 karaktera")
+    .min(4, "Minimum characters is 3")
+    .max(7, "Maxiimum characters is 7")
     .required("Required field"),
 });
 

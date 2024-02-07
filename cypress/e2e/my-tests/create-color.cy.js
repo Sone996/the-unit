@@ -23,6 +23,8 @@ const color = [
     it("delete color", () => {
       cy.dataTest('item_1').should("be.visible");
       cy.dataTest("delete_item_1").click();
+      cy.dataTest('delete-modal-header').should("be.visible");
+      cy.dataTest("delete-color-confirm").click();
       cy.dataTest('item_1').should("not.exist");
     })
   });

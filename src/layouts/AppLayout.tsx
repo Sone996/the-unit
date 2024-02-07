@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 import { RootStore } from "../clietStore";
 import NewColorModal from "../components/listComponents/NewColorModal";
 import List from "../pages/List";
+import DeleteColorModal from "../components/listComponents/DeleteColorModal";
 
 const AppLayout: FC = observer(() => {
   const { appStore } = RootStore();
@@ -12,6 +13,8 @@ const AppLayout: FC = observer(() => {
     switch (prop) {
       case "add-new-color-modal":
         return <NewColorModal />;
+      case "delete-color-modal":
+        return <DeleteColorModal />;
       default:
         break;
     }
